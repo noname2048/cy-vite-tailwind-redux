@@ -7,33 +7,22 @@ export const decrease = () => ({ type: DECREASE });
 export const reset = () => ({ type: RESET });
 
 const initialState = {
-  counter: {
-    value: 0,
-  },
+  value: 0,
 };
 
 const counterReducer = (state = initialState, action) => {
   switch (action.type) {
     case INCREASE:
       return {
-        ...state,
-        counter: {
-          value: state.counter.value + 1,
-        },
+        value: state.value + 1,
       };
     case DECREASE:
       return {
-        ...state,
-        counter: {
-          value: state.counter.value - 1,
-        },
+        value: state.value - 1,
       };
     case RESET:
       return {
-        ...state,
-        counter: {
-          value: 0,
-        },
+        value: 0,
       };
     default:
       return state;

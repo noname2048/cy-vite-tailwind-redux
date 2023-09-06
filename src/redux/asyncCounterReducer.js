@@ -1,6 +1,6 @@
-const INCREASE = "asyncCounter/INCREASE";
-const DECREASE = "asyncCounter/DECREASE";
-const RESET = "asyncCounter/RESET";
+const INCREASE = "async-counter/INCREASE";
+const DECREASE = "async-counter/DECREASE";
+const RESET = "async-counter/RESET";
 
 export const increase = () => ({ type: INCREASE });
 export const decrease = () => ({ type: DECREASE });

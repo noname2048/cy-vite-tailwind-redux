@@ -2,6 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App.jsx";
+import Counter from "#/components/counter/Counter.jsx";
+import Todos from "#/components/todos/Todos.jsx";
 import "./index.css";
 import { Provider } from "react-redux";
 import { store } from "#/redux/store.js";
@@ -12,8 +14,12 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/todo",
-    element: <App />,
+    path: "/counter",
+    element: <Counter />,
+  },
+  {
+    path: "/todos",
+    element: <Todos />,
   },
 ]);
 

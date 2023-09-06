@@ -13,6 +13,7 @@
     "#/*": "./src/*"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.5",
     "eslint-config-next": "^13.4.19",
     "localforage": "^1.10.0",
     "match-sorter": "^6.3.1",
@@ -23,6 +24,7 @@
     "react-router-dom": "^6.15.0",
     "redux": "^4.2.1",
     "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.4.2",
     "sort-by": "^1.2.0"
   },
   "devDependencies": {

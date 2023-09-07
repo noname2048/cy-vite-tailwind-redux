@@ -6,12 +6,14 @@ import asyncTodosReducer from "#/redux/asyncTodosReducer.js";
 import logger from "redux-logger";
 import { composeWithDevTools } from "@redux-devtools/extension";
 import ReduxThunk from "redux-thunk";
+import postsReducer from "#/redux/postsReducer.js";
 
 const rootReducer = combineReducers({
   counter: counterReducer,
   todos: todosReducer,
   asyncCounter: asyncCounterReducer,
   asyncTodos: asyncTodosReducer,
+  posts: postsReducer,
 });
 
 const store = createStore(

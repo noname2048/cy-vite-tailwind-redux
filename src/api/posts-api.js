@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 const posts = [
@@ -19,13 +21,13 @@ const posts = [
 ];
 
 const getPosts = async () => {
-  await sleep(1000);
-  return posts; // posts 배열
+  const response = await axios.get("http://localhost:4000/posts");
+  return response.data;
 };
 
 const getPostById = async (id) => {
-  await sleep(1000);
-  return posts.find((post) => post.id === id);
+  const response = await axios.get(`http://localhost:4000/posts/${id}`);
+  return response.data;
 };
 
 export { posts, getPosts, getPostById };

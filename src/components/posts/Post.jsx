@@ -20,13 +20,6 @@ export default function PostContainer() {
 
   return (
     <div>
-      <button
-        onClick={() => {
-          dispatch(thunkActions.goHome());
-        }}
-      >
-        Go Home
-      </button>
       <Post post={data} />
       <button
         onClick={() => {

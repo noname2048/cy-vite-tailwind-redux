@@ -10,6 +10,7 @@ import { Provider } from "react-redux";
 import { store } from "#/redux/store.js";
 import AsyncTodos from "#/components/async-todos/AsyncTodos.jsx";
 import Posts from "#/components/posts/Posts.jsx";
+import Post from "#/components/posts/Post.jsx";
 
 const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
   {
     path: "/posts",
     element: <Posts />,
+  },
+  {
+    path: "/post/:postId",
+    element: <Post />,
   },
 ]);
 

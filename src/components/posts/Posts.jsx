@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import { useDispatch, useSelector } from "react-redux";
 import { thunkActions } from "#/redux/postsReducer.js";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 export default function PostsContainer() {
   const { isLoading, data, isFetching, isError, error } = useSelector(
@@ -50,11 +51,13 @@ Posts.propTypes = {
 
 function Post({ post, dispatch }) {
   return (
-    <div className="flex flex-col gap-2 border border-blue-500 rounded-md m-2 p-2">
-      <span>{post.id}</span>
-      <span>{post.title}</span>
-      <span>{post.body}</span>
-    </div>
+    <Link to={`/post/${post.id}`}>
+      <div className="flex flex-col gap-2 border border-blue-500 rounded-md m-2 p-2">
+        <span>{post.id}</span>
+        <span>{post.title}</span>
+        <span>{post.body}</span>
+      </div>
+    </Link>
   );
 }
 

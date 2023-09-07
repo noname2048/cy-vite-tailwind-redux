@@ -77,6 +77,11 @@ const thunkActions = {
       dispatch(actionCreators.fetchPostError({ id, error }));
     }
   },
+  goHome:
+    () =>
+    (dispatch, getState, { history }) => {
+      history.push("/posts");
+    },
 };
 
 export { actionCreators, postReducer, thunkActions };

@@ -77,6 +77,9 @@ const thunkActions = {
       dispatch(actionCreators.fetchPostError({ id, error }));
     }
   },
+  goPosts: (navigate) => (dispatch) => {
+    navigate("/posts");
+  },
 };
 
 export { actionCreators, postReducer, thunkActions };

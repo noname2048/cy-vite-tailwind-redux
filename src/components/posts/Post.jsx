@@ -1,11 +1,13 @@
 import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { thunkActions } from "#/redux/postReducer.js";
 import PropTypes from "prop-types";
 
 export default function PostContainer() {
+  const navigate = useNavigate();
   const { postId } = useParams();
+
   const posts = useSelector((state) => state.post);
   const dispatch = useDispatch();
   const { isLoading, isFetching, data, isError, error } = posts[postId];
@@ -20,6 +22,13 @@ export default function PostContainer() {
 
   return (
     <div>
+      <button
+        onClick={() => {
+          dispatch(thunkActions.goPosts(navigate));
+        }}
+      >
+        Go Posts
+      </button>
       <Post post={data} />
       <button
         onClick={() => {

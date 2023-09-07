@@ -103,7 +103,7 @@ function Task({ task, dispatch }) {
       <input
         className="px-1 mx-1"
         type="checkbox"
-        value={task.isCompleted}
+        checked={task.isCompleted}
         onChange={(e) => {
           dispatch(updateTask({ ...task, isCompleted: e.target.value }));
         }}

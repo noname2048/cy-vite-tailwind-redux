@@ -13,6 +13,7 @@ import Posts from "#/components/posts/Posts.jsx";
 import Post from "#/components/posts/Post.jsx";
 import SagaCounter from "#/components/saga-counter/SagaCounter.jsx";
 import SagaPosts from "#/components/saga-post/SagaPosts.jsx";
+import ColorPaletteContainer from "#/components/three-color/ColorPalette.jsx";
 
 const router = createBrowserRouter([
   {
@@ -50,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: "/saga-posts",
     element: <SagaPosts />,
+  },
+  {
+    path: "/three-color",
+    element: <ColorPaletteContainer />,
   },
 ]);
 

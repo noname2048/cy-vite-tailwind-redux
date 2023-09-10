@@ -12,6 +12,7 @@ import AsyncTodos from "#/components/async-todos/AsyncTodos.jsx";
 import Posts from "#/components/posts/Posts.jsx";
 import Post from "#/components/posts/Post.jsx";
 import SagaCounter from "#/components/saga-counter/SagaCounter.jsx";
+import SagaPosts from "#/components/saga-post/SagaPosts.jsx";
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
   {
     path: "/saga-counter",
     element: <SagaCounter />,
+  },
+  {
+    path: "/saga-posts",
+    element: <SagaPosts />,
   },
 ]);
 

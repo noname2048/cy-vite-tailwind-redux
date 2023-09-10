@@ -14,6 +14,10 @@ import {
   counterReducer as sagaCounterReducer,
 } from "#/redux/saga/counterReducer.js";
 import { all } from "redux-saga/effects";
+import {
+  postsSaga,
+  postsReducer as sagaPostReducer,
+} from "#/redux/saga/postsReducer.js";
 
 const rootReducer = combineReducers({
   counter: counterReducer,
@@ -23,6 +27,7 @@ const rootReducer = combineReducers({
   posts: postsReducer,
   post: postReducer,
   sagaCounter: sagaCounterReducer,
+  sagaPosts: sagaPostReducer,
 });
 
 const sagaMiddleware = createSagaMiddleware();
@@ -34,7 +39,7 @@ const store = createStore(
 );
 
 const rootSaga = function* () {
-  yield all([counterSaga()]);
+  yield all([counterSaga(), postsSaga()]);
 };
 
 sagaMiddleware.run(rootSaga);

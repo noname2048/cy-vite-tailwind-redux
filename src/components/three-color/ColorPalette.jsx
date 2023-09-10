@@ -40,7 +40,7 @@ function ColorContainer({ className, children }) {
   return (
     <div
       className={cn(
-        "w-24 rounded-lg flex flex-col items-center pt-8",
+        "flex w-24 flex-col items-center rounded-lg pt-8 ",
         className,
       )}
     >
@@ -60,7 +60,7 @@ function Color({ className, children }) {
 
   return (
     <div
-      className={cn("h-24 w-full m-4", className)}
+      className={cn("m-4 h-24 w-full", className)}
       onDragEnter={(e) => {
         setIsOver(true);
       }}
@@ -130,7 +130,7 @@ ColorEmpty.propTypes = {
 };
 
 function ColorInnerEmpty() {
-  <div className={cn("h-full rounded-md")}></div>;
+  return <div className={cn("h-full rounded-md")}></div>;
 }
 
 ColorInnerEmpty.propTypes = {

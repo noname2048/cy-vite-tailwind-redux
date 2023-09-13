@@ -14,6 +14,7 @@ import Post from "#/components/posts/Post.jsx";
 import SagaCounter from "#/components/saga-counter/SagaCounter.jsx";
 import SagaPosts from "#/components/saga-post/SagaPosts.jsx";
 import ColorPaletteContainer from "#/components/three-color/ColorPalette.jsx";
+import Dragging from "#/components/dnd-kit/Dragging.jsx";
 
 const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ const router = createBrowserRouter([
   {
     path: "/three-color",
     element: <ColorPaletteContainer />,
+  },
+  {
+    path: "/dragging",
+    element: <Dragging />,
   },
 ]);
 

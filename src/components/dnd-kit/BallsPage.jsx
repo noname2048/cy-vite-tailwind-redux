@@ -5,7 +5,7 @@ import { useState } from "react";
 import { CSS } from "@dnd-kit/utilities";
 import { cn } from "#/lib/clsx.js";
 
-export default function DND() {
+export default function BallsPage() {
   const [balls, setBalls] = useState([1, 2, 3, 4, 5]);
   const [holder, setHolder] = useState([]);
 
@@ -16,21 +16,28 @@ export default function DND() {
       }}
       onDragEnd={(e) => {
         console.log("END", e);
-        const newBalls = balls.filter((num) => num !== Number(e.active.id[1]));
-        setBalls(newBalls);
+        if (e?.over?.id === "H0") {
+          const newBalls = balls.filter(
+            (num) => num !== Number(e.active.id[1]),
+          );
+          setBalls(newBalls);
+        }
       }}
       onDragOver={(e) => {
         console.log("OVER", e);
       }}
     >
-      <div>Balls</div>
+      <h1 className="text-3xl font-bold">Balls</h1>
+      <p>drag ball in holder, ball will be disappear</p>
       <div className="flex gap-4 border p-4">
         {balls.map((num) => (
           <Ball key={num} num={num} />
         ))}
       </div>
       <div>Holder</div>
-      <Holder />
+      <div className="p-4">
+        <Holder />
+      </div>
     </DndContext>
   );
 }

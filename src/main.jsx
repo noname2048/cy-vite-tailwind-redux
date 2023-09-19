@@ -14,7 +14,8 @@ import Post from "#/components/posts/Post.jsx";
 import SagaCounter from "#/components/saga-counter/SagaCounter.jsx";
 import SagaPosts from "#/components/saga-post/SagaPosts.jsx";
 import ColorPaletteContainer from "#/components/three-color/ColorPalette.jsx";
-import DND from "#/components/dnd-kit/DND.jsx";
+import BallsPage from "#/components/dnd-kit/BallsPage.jsx";
+import BallsSortPage from "#/components/dnd-kit/BallsSortPage.jsx";
 
 const router = createBrowserRouter([
   {
@@ -58,8 +59,12 @@ const router = createBrowserRouter([
     element: <ColorPaletteContainer />,
   },
   {
-    path: "/dnd",
-    element: <DND />,
+    path: "/dnd/balls",
+    element: <BallsPage />,
+  },
+  {
+    path: "/dnd/balls2",
+    element: <BallsSortPage />,
   },
 ]);
 
